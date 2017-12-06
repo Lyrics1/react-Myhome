@@ -9,30 +9,16 @@ import{
 
 */
 export default class Header extends Component {
-	// constructor(props,context) {
-	// 	super(props,context);
-	// 	this.state={
-
-	// 	}
-	// }
 	render() {
 		return (
 			<Router>
-				<nav className="Header">
-					
+				<nav className="Header">					
 						<ul>
-							<li>
-								<Link to="/">
-									<img src="" alt="主页"/>
-								</Link>
-							</li>
-							<li>
-								<Link to="/">One Page</Link>
-								<Link to="/">One Page</Link>
-								<Link to="/">One Page</Link>
-							</li>
-						</ul>
-					
+							<li><Link to="/">Lyrics</Link></li>
+							<li><Link to="/">One Page</Link></li>
+							<li><Link to="/">One Page</Link></li>
+							<li><Link to="/">One Page</Link></li>
+						</ul>					
 				</nav>
 			</Router>
 
