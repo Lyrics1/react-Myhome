@@ -1,15 +1,40 @@
+.boder_radius(@radius:5px){
+	-ms-border-radius: @radius;
+	-moz-border-radius: @radius;
+	-o-border-radius: @radius;
+	-webkit-border-radius:@radius;
+}
 form {
 	width:50vw;
 	height: auto;
 	overflow: auto;
 	margin-left: 30vw;
-	lable{
-		display: block;
+	.input-groups{
+		margin: 25px 0 0 0;
+			label{
+			width:20px;
+			margin:0 4% 0 0;
+			font-weight: 800;
+		}
+		input{
+			width: 80%;
+			height: 30px;
+			outline: none;
+			border: 1px solid #ccc;
+			background-color:transparent ;	
+			.boder_radius;
+		}
+
 	}
-	input{
-		width: 80%;
+	button{
+		/*width:20%;*/
 		height: 30px;
-		outline: none;
-		border: 1px solid #ccc;background-color:#FFF;
+		margin:25px 0 0 80%;
+		@media (max-width:992px){
+			margin:25px 0 0 50%;
+		}
+		background-color: transparent;
+		.boder_radius;
 	}
+	
 }

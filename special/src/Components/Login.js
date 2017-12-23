@@ -14,14 +14,19 @@ class Login extends Component{
 		return(
 			<div>
 				<form action={this.props.url}>
-					<lable> user
+					<div className="input-groups">
+						<label> user </label>
 						<input type="text"  placeholder ="请输入用户名"/>
-					</lable>
-					<lable>pass 
-							<input type="password"  placeholder ="请输入密码"/>
-					</lable>
+					</div>
+					
+					<div className="input-groups">
+						<label>pass </label>
+						<input type="password"  placeholder ="请输入密码"/>
+					</div>
+					
+					
 				
-				  <input type="submit" value="submit"/>
+				  <button type="submit">submit</button>
 				</form>
 				
 			</div>

@@ -3,11 +3,14 @@ import  PropTypes from 'prop-types';
 import{
 	BrowserRouter as Router,
 	Route,
-	Link
+	Link,
+	Switch,
+	Redirect
 } from 'react-router-dom';
 
 import '../Style/header.less';
-import Login from './LOGIN';
+import Login from './Login';
+import Info from './Info';
 /*
   公共头部
 
@@ -31,7 +34,7 @@ export default class Header extends Component {
 		var nav = this.refs.nav;
 		var nava = this.refs.nava;
 		var navb = this.refs.navb;
-		if(this.state.menu == "OFF"){
+		if(this.state.menu === "OFF"){
 			this.setState({
 				menu:"ON"
 			});
@@ -53,23 +56,24 @@ export default class Header extends Component {
 
 		return (
 			<Router>
-				<div>
+				<div className="Apps">
 					<nav className="Header">					
-							<ul >
+							<ul>
 								<li>
-									<Link to="/">Lyrics</Link>
-									 <img src={require('../image/menu2.png') } alt="菜单" onClick={this._controlMenu}  />
-
+									<Link to="/index">Lyrics</Link>
+									<img src={require('../image/menu2.png') } alt="菜单" onClick={this._controlMenu}  />
 								</li>
 								<li ref="nav"> <Link to="/">One Page</Link></li>
 								<li ref="nava"><Link to="/signIn">One Page</Link></li>
 								<li ref="navb"><Link to="/signUp">One Page</Link></li>
-							</ul>
-
-											
+							</ul>					
 					</nav>
-					<Route path="/signUp" component={SIGNIN}/>	
-					<Route path="/signIn" component={SIGNUP}/>
+					 <Switch>
+						<Route exact path="/" component={Info}/>
+						<Route path="/signUp" component={SIGNUP}/>	
+						<Route path="/signIn" component={SIGNIN}/>
+						<Redirect path="*" to="/" />
+					 </Switch>
 				</div>
 			</Router>
 
@@ -79,12 +83,19 @@ export default class Header extends Component {
 
 const SIGNIN = ({ match }) => (
   <div>
-		<Login />
+		<Login url={match.url} />
   </div>
 )
 
 const SIGNUP = ({ match }) => (
   <div>
     <p>SIGNUP</p>
+  </div>
+)
+
+
+const Test = ({ match }) => (
+  <div>
+    <p>000000000000000</p>
   </div>
 )
