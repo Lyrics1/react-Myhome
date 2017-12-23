@@ -71,8 +71,8 @@ export default class Header extends Component {
 					 <Switch>
 						<Route exact path="/" component={Info}/>
 						<Route path="/signUp" component={SIGNUP}/>	
-						<Route path="/signIn" component={SIGNIN}/>
-						<Redirect path="*" to="/" />
+						 <Route path="/signIn" component={SIGNIN}/>
+						<Redirect to="/" />
 					 </Switch>
 				</div>
 			</Router>
@@ -83,7 +83,7 @@ export default class Header extends Component {
 
 const SIGNIN = ({ match }) => (
   <div>
-		<Login url={match.url} />
+		<Login url={match.url} />             
   </div>
 )
 

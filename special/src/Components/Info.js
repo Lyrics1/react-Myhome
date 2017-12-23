@@ -7,9 +7,9 @@ export default class Info extends Component{
       <div className="info">
         <div className="Title">Welcome come to my React Home Page  </div>
         <div className="link">
-          <span>github</span>
-          <span>dddd1</span>
-          <span>github</span>
+          <span> <a href=""> github</a></span>
+          <span><a href=""> dddd1  </a></span>
+          <span><a href=""> github</a></span>
         </div>
       </div>
       )

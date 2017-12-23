@@ -9,6 +9,9 @@ class Login extends Component{
 			URL:"/signUp"
 		}
 	}
+	componentWillMount(){
+		console.log(this.props)
+	}
 
 	render(){
 		return(
